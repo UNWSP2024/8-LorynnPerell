@@ -10,14 +10,13 @@
 def word_separator(sentence):
 
     new_sentence = ""
-    #    Add your logic here
-
+    for index, char in enumerate(sentence):
+        if char.isupper() and index != 0:
+            new_sentence += " "
+    new_sentence += char.lower()
+    new_sentence = new_sentence[0].upper() + new_sentence[1:]
     return new_sentence.strip()
+
 
 # Example usage
 
-sentence = "StopAndSmellTheRoses"
-
-new_sentence = word_separator(sentence)
-
-print(new_sentence)
